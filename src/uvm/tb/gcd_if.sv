@@ -7,7 +7,7 @@
 * methods for the driver and monitor to interact with the DUT signals.
 -------------------------------------------------------------------------------------------------*/
 
-interface gcd_if(input logic clk_i, input logic rst_i);
+interface gcd_if(input logic clk_i);
 timeunit 1ns;
 timeprecision 100ps;
 
