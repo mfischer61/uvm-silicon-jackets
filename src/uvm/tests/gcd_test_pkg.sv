@@ -4,6 +4,7 @@ package gcd_test_pkg;
   import uvm_pkg::*;
   import gcd_env_pkg::*;
   import gcd_seq_pkg::*;
+  import rst_seq_pkg::*;
   `include "gcd_base_test.svh"
   `include "gcd_test_lib.sv"
   
