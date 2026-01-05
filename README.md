@@ -5,14 +5,16 @@ UVM Onboarding For DV Members
 In this onboarding, you will learn a high-level overview of UVM. Due to the compressed nature of this onboarding, we cannot go over 100% of the library. In each chapter, there **will** be inline links. It is imperative for you to click on them and read them to have a complete understanding. We also assume that you have some idea of what OOP is. If not, please read up on it.
 
 In this project, you will create a UVM Testbench for a GCD Module completing the following steps:
-1. Create the driver, monitor, and sequencer.
-2. Instantiate the driver, monitor, and sequencer in an agent.
-3. Write the scoreboard.
-4. Instantiate the agent and scoreboard in the environment.
-5. Write different sequences (by extending the base sequence) for different test cases.
-6. Write different tests to run the different sequences.
-7. Debug the faulty RTL.
-8. Get 96% code coverage.
+1. Create the GCD driver, GCD monitor, and GCD sequencer.
+2. Instantiate the GCD driver, GCD monitor, and GCD sequencer in the GCD agent.
+3. Create the Reset driver and Reset sequencer.
+4. Instantiate the Reset driver and Reset sequencer in the Reset agent.
+5. Write the scoreboard.
+6. Instantiate the GCD agent, Reset agent, and scoreboard in the environment.
+7. Write different sequences (by extending the base sequence) for different test cases.
+8. Write different tests to run the different sequences.
+9. Debug the faulty RTL.
+10. Get 96% code coverage.
    
 Don't worry if a lot of words here make no sense. In the following chapters,  we will address all of them.
 
@@ -26,10 +28,12 @@ REFER [HERE](https://github.gatech.edu/SiliconJackets/uvm_onboarding/blob/main/E
    - You should have previously signed the Cadence EULA from onboarding and have the line `source /tools/software/cadence/setup.csh` in your ~/.my-cshrc. If not, you will need to do this before continuing
    - Switch to tc shell by running `tcsh`
 3. Create your UVM Testbench for the GCD Module. The tasks you need to complete for each step are listed in comments at the top of each file
-   - Create the driver, monitor, and sequencer.
-   - Instantiate the driver, monitor, and sequencer in an agent.
+   - Create the GCD driver, GCD monitor, and GCD sequencer.
+   - Instantiate the GCD driver, GCD monitor, and GCD sequencer in the GCD agent.
+   - Create the Reset driver and Reset sequencer.
+   - Instantiate the Reset driver and Reset sequencer in the Reset agent.
    - Write the scoreboard.
-   - Instantiate the agent and scoreboard in the environment.
+   - Instantiate the GCD agent, Reset agent, and scoreboard in the environment.
    - Write different sequences (by extending the base sequence) for different test cases.
    - Write different tests to run the different sequences.
    - Debug the faulty RTL.
