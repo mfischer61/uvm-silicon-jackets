@@ -5,7 +5,7 @@
 *
 * Tasks to complete here:
 *   1. Call the UVM component macro to register with the factory
-*   2. Define the basic UVM Constructor
+*   2. Define the basic UVM Constructor (new)
 -------------------------------------------------------------------------------------------------*/
 
 class gcd_sequencer extends uvm_sequencer #(gcd_seq_item);

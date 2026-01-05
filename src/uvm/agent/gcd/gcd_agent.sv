@@ -5,9 +5,10 @@
 *
 * Tasks to complete here:
 *   1. Call the UVM component macro to register with the factory
-*   2. Define the basic UVM Constructor
-*   3. Instantiate your driver, monitor, and sequencer based on is_active
-*   4. Connect your sequencer to your driver based on is_active
+*   2. Declare the monitor, sequencer, and driver components
+*   3. Define the basic UVM Constructor
+*   4. Instantiate your driver, monitor, and sequencer based on is_active
+*   5. Connect your sequencer to your driver based on is_active
 -------------------------------------------------------------------------------------------------*/
 
 class gcd_agent extends uvm_agent;
