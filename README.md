@@ -60,17 +60,26 @@ This subdirectory contains the GCD Module source code
 #### `src/uvm/`
 This subdirectory contains all the UVM subdirectories
 
-##### `src/uvm/agent/`
-This subdirectory contains the agent and all of its components (driver, monitor, sequencer)
+##### `src/uvm/agent/gcd`
+This subdirectory contains the GCD agent and all of its components (driver, monitor, sequencer)
+
+##### `src/uvm/agent/rst`
+This subdirectory contains the Reset agent and all of its components (driver and sequencer)
 
 ##### `src/uvm/env/`
-This subdirectory contains your environment and scoreboard
+This subdirectory contains your environment, scoreboard, and virtual sequencer
 
-##### `src/uvm/sequences/`
-This subdirectory contains the sequence item, base sequence, and sequence library
+##### `src/uvm/sequences/gcd`
+This subdirectory contains the GCD sequence item, GCD base sequence, and GCD sequence library
+
+##### `src/uvm/sequences/rst`
+This subdirectory contains the Reset sequence item and Reset sequence library
+
+##### `src/uvm/sequences/virtual`
+This subdirectory contains the Virtual base sequence and Virtual sequence library
 
 ##### `src/uvm/tb/`
-This subdirectory contains the testbench top and interface
+This subdirectory contains the testbench top and interfaces
 
 ##### `src/uvm/tests/`
 This subdirectory contains the base test and test library
