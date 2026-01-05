@@ -5,7 +5,7 @@
 #--------------------------------------------------------------------
 
 # ===== User-configurable knobs =====================================
-TESTNAME        ?= all_gcd_test 
+TESTNAME        ?= reset_during_gcd_test 
 UVM_MAX_QUIT    ?= 1
 UVM_VERBOSITY   ?= UVM_FULL
 
@@ -15,10 +15,13 @@ TOPLEVEL        ?= gcd_tb_top
 # Define source directories relative to the project root
 SRC_DIRS := src/sv/rtl \
             src/uvm/env \
-            src/uvm/agent \
-            src/uvm/sequences \
+            src/uvm/agent/gcd \
+			src/uvm/agent/rst \
+            src/uvm/sequences/gcd \
+			src/uvm/sequences/rst \
+			src/uvm/sequences/virtual \
             src/uvm/tb \
-            src/uvm/tests
+            src/uvm/tests 
 # Define the simulation directory (current directory where makefile is located)
 SIM_DIR := .
 
@@ -26,18 +29,27 @@ SIM_DIR := .
 PROJECT_ROOT := ../..
 
 INC_DIRS := -incdir src/uvm/tests \
-			-incdir src/uvm/agent \
-			-incdir src/uvm/sequences \
+			-incdir src/uvm/agent/gcd \
+			-incdir src/uvm/agent/rst \
+			-incdir src/uvm/sequences/gcd \
+			-incdir src/uvm/sequences/rst \
+			-incdir src/uvm/sequences/virtual \
 			-incdir src/uvm/env \
 			-incdir src/uvm/tb
 
 SV_FILES := src/sv/rtl/gcd_pkg.sv \
 			src/sv/rtl/gcd.sv \
-			src/uvm/sequences/gcd_seq_pkg.sv \
-			src/uvm/agent/gcd_agent_pkg.sv \
+			src/uvm/tb/gcd_if.sv \
+			src/uvm/tb/rst_if.sv \
+			src/uvm/sequences/gcd/gcd_item_pkg.sv \
+			src/uvm/sequences/rst/rst_item_pkg.sv \
+			src/uvm/agent/gcd/gcd_agent_pkg.sv \
+			src/uvm/agent/rst/rst_agent_pkg.sv \
+			src/uvm/sequences/virtual/gcd_vseq_pkg.sv \
+			src/uvm/sequences/rst/rst_seq_pkg.sv \
+			src/uvm/sequences/gcd/gcd_seq_pkg.sv \
 			src/uvm/env/gcd_env_pkg.sv \
 			src/uvm/tests/gcd_test_pkg.sv \
-			src/uvm/tb/gcd_if.sv \
 			src/uvm/tb/gcd_tb_top.sv \
 
 VERILOG_DEFINES := +SIM=1
@@ -103,7 +115,7 @@ simvision:
 run_and_view: xrun simvision
 
 coverage:
-	/tools/software/cadence/vmanager/25.09.020/tools.lnx86/vmgr/bin/imc -load cov_work/scope/test &
+	/tools/software/cadence/vmanager/latest/tools.lnx86/vmgr/bin/imc -load cov_work/scope/test &
 
 # ===== Cleanup =====================================================
 .PHONY: clean
