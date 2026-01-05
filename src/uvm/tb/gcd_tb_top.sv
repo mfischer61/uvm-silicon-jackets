@@ -15,24 +15,18 @@ module gcd_tb_top;
     import gcd_seq_pkg::*;
     import gcd_agent_pkg::*;
     import gcd_env_pkg::*;
+    import rst_agent_pkg::*;
+    import rst_seq_pkg::*;
 
     logic clk = 0;
-    logic rst = 0;
 
     always #10ns clk = ~clk;
 
-    initial begin
-        rst = 1;
-        #10ns rst = 0;
-    end
-
-    // Interface instantiation
-    gcd_if if0(clk, rst);
-
-    // DUT instantiation
+    gcd_if if0(clk);
+    rst_if if1(clk);
     gcd dut(
         .clk_i(clk),
-        .rst_i(rst),
+        .rst_i(if1.rst_i),
         .valid_i(if0.valid_i),
         .a_i(if0.a_i),
         .b_i(if0.b_i),
@@ -40,12 +34,10 @@ module gcd_tb_top;
         .valid_o(if0.valid_o));
 
     initial begin
-        // Initialize waveform dumping
         $shm_open("waves.shm");
         $shm_probe("AS");
-        // Store the virtual interface handle 'if0' in the UVM configuration database
-        // under the field name "vif" so all components under uvm_root can access it.
         uvm_config_db #(virtual gcd_if)::set(uvm_root::get(), "*", "vif", if0);
+        uvm_config_db #(virtual rst_if)::set(uvm_root::get(), "*", "rst_vif", if1);
         run_test();
     end
 
