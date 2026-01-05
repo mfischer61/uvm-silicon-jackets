@@ -5,9 +5,11 @@
 *
 * Tasks to complete here:
 *   1. Call the UVM component macro to register with the factory
-*   2. Define the basic UVM Constructor
-*   3. Instantiate the agent and scoreboard
-*   4. Connect your monitor analysis port to the scoreboard analysis import
+*   2. Declare the gcd_agent, rst_agent, virtual sequencer, and scoreboard
+*   3. Define the basic UVM Constructor
+*   4. Instantiate the gcd_agent, rst_agent, virtual sequencer, and scoreboard (build_phase)
+*   5. Connect your monitor analysis port to the scoreboard analysis import (connect_phase)
+*   6. Connect virtual sequencer to gcd sequencer and reset sequencer (connect_phase)
 -------------------------------------------------------------------------------------------------*/
 
 class gcd_env extends uvm_env;
