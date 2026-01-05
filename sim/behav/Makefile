@@ -5,7 +5,7 @@
 #--------------------------------------------------------------------
 
 # ===== User-configurable knobs =====================================
-TESTNAME        ?= reset_during_gcd_test 
+TESTNAME        ?= simple_gcd_test 
 UVM_MAX_QUIT    ?= 1
 UVM_VERBOSITY   ?= UVM_FULL
 
