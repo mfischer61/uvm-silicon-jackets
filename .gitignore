@@ -1,0 +1,15 @@
+# Symlinks created by `make link_src`
+sim/behav/src/
+
+# Xcelium compile/sim output
+sim/behav/xcelium.d/
+sim/behav/*.log
+sim/behav/*.history
+sim/behav/*.key
+
+# Coverage database (-coverage all)
+sim/behav/cov_work/
+
+# Waveforms ($shm_open) and SimVision state
+sim/behav/*.shm/
+sim/behav/.simvision/
