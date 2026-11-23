@@ -9,5 +9,9 @@
 -------------------------------------------------------------------------------------------------*/
 
 class gcd_sequencer extends uvm_sequencer #(gcd_seq_item);
+    `uvm_component_utils(gcd_sequencer)
 
+    function new(string name = "gcd_sequencer", uvm_component parent = null);
+        super.new(name, parent);
+    endfunction : new
 endclass : gcd_sequencer
